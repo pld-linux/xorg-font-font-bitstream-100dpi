@@ -1,21 +1,22 @@
 Summary:	bitstream-100dpi font
 Summary(pl):	Font bitstream-100dpi
 Name:		xorg-font-font-bitstream-100dpi
-Version:	0.99.0
-Release:	0.01
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-100dpi-%{version}.tar.bz2
-# Source0-md5:	d5f1ac2764b3bc7e4fdd7ef6c3078af2
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bitstream-100dpi-%{version}.tar.bz2
+# Source0-md5:	31892d08774016a55f58a57f4e5e95be
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util
 BuildRequires:	xorg-util-util-macros
+Requires(post,postun):	fontpostinst
+Requires:	%{_fontsdir}/100dpi
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +32,8 @@ Font bitstream-100dpi.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-fontdir=%{_fontsdir}/100dpi
 
 %{__make}
 
@@ -44,6 +46,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+fontpostinst 100dpi
+
+%postun
+fontpostinst 100dpi
+
 %files
 %defattr(644,root,root,755)
-%{_libdir}/X11/fonts/100dpi/*
+%doc COPYING ChangeLog
+%{_fontsdir}/100dpi/*.pcf.gz

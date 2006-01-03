@@ -1,16 +1,15 @@
 Summary:	bitstream-100dpi font
 Summary(pl):	Font bitstream-100dpi
 Name:		xorg-font-font-bitstream-100dpi
-Version:	0.99.1
+Version:	1.0.0
 Release:	0.1
 License:	MIT
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bitstream-100dpi-%{version}.tar.bz2
-# Source0-md5:	31892d08774016a55f58a57f4e5e95be
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-bitstream-100dpi-%{version}.tar.bz2
+# Source0-md5:	173352ddec3d26e2b91df1edcf1ae85b
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale

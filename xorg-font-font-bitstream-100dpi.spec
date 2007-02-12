@@ -1,5 +1,5 @@
 Summary:	bitstream-100dpi font
-Summary(pl.UTF-8):   Font bitstream-100dpi
+Summary(pl.UTF-8):	Font bitstream-100dpi
 Name:		xorg-font-font-bitstream-100dpi
 Version:	1.0.0
 Release:	0.1

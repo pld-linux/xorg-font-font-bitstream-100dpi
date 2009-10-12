@@ -1,12 +1,12 @@
 Summary:	Bitstream 100dpi bitmap fonts
 Summary(pl.UTF-8):	Fonty bitmapowe 100dpi Bitstream
 Name:		xorg-font-font-bitstream-100dpi
-Version:	1.0.0
-Release:	2
+Version:	1.0.1
+Release:	1
 License:	MIT
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-bitstream-100dpi-%{version}.tar.bz2
-# Source0-md5:	173352ddec3d26e2b91df1edcf1ae85b
+# Source0-md5:	3b8748f8029c53595e4a4a1b23fa790a
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -33,6 +33,8 @@ Fonty bitmapowe 100dpi Bitstream: Charter i Terminal.
 %{__autoconf}
 %{__automake}
 %configure \
+	--build=%{_host_platform} \
+	--host=%{_host_platform} \
 	--with-fontdir=%{_fontsdir}/100dpi
 
 %{__make}
